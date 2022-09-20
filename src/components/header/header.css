@@ -1,0 +1,150 @@
+header {
+  height: 100vh;
+  padding-top: 7rem;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.wrapper {
+  display: flex;
+}
+.wrapper .static-txt {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts {
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li {
+  list-style: none;
+  color: #fc6d6d;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100% {
+    top: -360px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #343f4f;
+  border-left: 2px solid #fc6d6d;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.header__container {
+  text-align: center;
+  height: 100%;
+  position: relative;
+}
+
+.name__heading {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  color: brown;
+  animation: name_header 2s linear 0s infinite alternate;
+}
+
+@keyframes name_header {
+  from {
+    width: 0;
+  }
+  to {
+    width: 450px;
+  }
+}
+
+/* ===============CTA=============== */
+.cta {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* ============HEADER SOCIALS=========== */
+
+.header__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+}
+
+.header__socials::after {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background: var(--color-primary);
+}
+
+/* ===============ME==================== */
+.me {
+  background: linear-gradient(var(--color-primary), transparent);
+  width: 22rem;
+  height: 30rem;
+  position: absolute;
+  left: calc(50% - 11rem);
+  margin-top: 4rem;
+  border-radius: 12rem 12rem 0 0;
+  overflow: hidden;
+  padding: 5rem 1.5rem 1.5rem 1.5rem;
+}
+
+/* ===============SCROLL DOWN======= */
+.scroll__down {
+  position: absolute;
+  right: -2.3rem;
+  bottom: 5rem;
+  transform: rotate(90deg);
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* =========MEDIA QUERIES (MEDIUM DEVICES) =============== */
+@media screen and (max-width: 1024px) {
+  header {
+    height: 68vh;
+  }
+}
+
+/* =========MEDIA QUERIES (SMALL DEVICES) =============== */
+@media screen and (max-width: 600px) {
+  header {
+    height: 100vh;
+  }
+
+  .header__socials, .scroll__down {
+    display: none;
+  }
+}
